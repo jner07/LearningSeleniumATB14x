@@ -23,6 +23,7 @@ public class Lab013_Proj5_TTA_BankAccountCreation extends CommonToAll {
         WebDriver driver = new ChromeDriver();
         openBrowser(driver, "https://tta-bank-digital-973242068062.us-west1.run.app/");
 
+        //AccountCreation
         WebElement signup_button = driver.findElement(By.xpath("//button[text()='Sign Up']"));
         signup_button.click();
 
@@ -42,6 +43,7 @@ public class Lab013_Proj5_TTA_BankAccountCreation extends CommonToAll {
 
         customWait(2000);
 
+        //Dashboard validation
         WebElement dashboard = driver.findElement(By.xpath("//h1[text()='Dashboard']"));
         Assert.assertEquals(dashboard.getText(), "Dashboard");
 
@@ -50,6 +52,7 @@ public class Lab013_Proj5_TTA_BankAccountCreation extends CommonToAll {
 
         customWait(1000);
 
+        //Adding Beneficiaries
         WebElement ManageBenf_button = driver.findElement(By.xpath("//button[text()='Manage Beneficiaries']"));
         ManageBenf_button.click();
 
@@ -63,6 +66,8 @@ public class Lab013_Proj5_TTA_BankAccountCreation extends CommonToAll {
 
         List<WebElement> accountNum = driver.findElements(By.xpath("//input[@type='text']"));
         fullname.get(2).sendKeys("360258972038");
+
+        customWait(3000);
 
         WebElement savebenf_button = driver.findElement(By.xpath("//button[text()='Save Beneficiary']"));
         savebenf_button.click();
